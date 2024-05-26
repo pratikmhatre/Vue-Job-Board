@@ -5,8 +5,8 @@ export default createStore({
     state(){
         return {
             jobs : [],
-            selectedField : 'Android Development',
-            fields : ['Android Development', 'Frontend Development', 'Backend Development', 'Fullstack Development', 'Blockchain Development']
+            selectedField : 'All',
+            fields : ['All','Android Development', 'Frontend Development', 'Backend Development', 'Fullstack Development', 'Blockchain Development']
         };
     },
     mutations : {
@@ -19,12 +19,15 @@ export default createStore({
             state.jobs.push(job);
         },
         selectField(state, name){
-            console.log('Selecting field : ', name);
             state.selectedField = name;
         }
 
     },
-    actions : {},
+    actions : {
+        saveJob(context, job){
+            context.commit('addJob', job);
+        }
+    },
     getters : {
         fieldsList(state){
             return state.fields.map(f => {

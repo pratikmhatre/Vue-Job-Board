@@ -10,11 +10,6 @@
 import NavItem from './NavItem.vue'
 // import {mapGetters} from 'vuex';
 export default {
-    watch:{
-        fields(newValue){
-            console.log(newValue);
-        }
-    },
     components: {
         NavItem
     },
@@ -29,7 +24,7 @@ export default {
 <style scoped>
 img{
     height: 50px;
-    margin-top: 50px;
+    margin-top: 30px;
 }
  #bar {
     display: flex;
@@ -43,6 +38,7 @@ img{
  .field-list {
     display: flex;
     flex-direction: row;
+    margin-top: 10px;
     justify-content: center;
  }
 </style>
